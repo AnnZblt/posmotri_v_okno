@@ -148,6 +148,9 @@ input::-webkit-input-placeholder {
 
 .search-form__pseudo-checkbox {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
@@ -155,8 +158,6 @@ input::-webkit-input-placeholder {
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: '';
-  position: absolute;
-  inset: 1px;
   width: 15px;
   height: 15px;
   background-color: #fff;
@@ -280,6 +281,8 @@ input::-webkit-input-placeholder {
 }
 
 .content__video-card-description {
+  max-height: 62px;
+  overflow-y: auto;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
