@@ -9,6 +9,8 @@ html {
 }
 
 .page {
+  display: flex;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -47,11 +49,6 @@ ol {
   white-space: nowrap;
 }
 
-.page {
-  display: flex;
-  align-items: center;
-}
-
 .content {
   display: grid;
   grid-template-columns: 1fr 399px;
@@ -65,12 +62,15 @@ ol {
   position: relative;
   max-width: 711px;
   max-height: 386px;
-  margin-bottom: 23px;
+  margin-bottom: 17px;
 }
 
 .result__video {
   width: 100%;
   height: auto;
+  max-height: 386px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -99,6 +99,10 @@ ol {
   cursor: pointer;
 }
 
+.search-form__label:hover .search-form__label-text{
+  text-decoration: underline;
+}
+
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
@@ -117,10 +121,10 @@ ol {
   border-bottom: 1px solid #fff;
   border-left: 1px solid transparent;
   padding: 2.5px 1px;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: 'Fira Sans Condensed', sans-serif;
+  color: inherit;
+  font-family: inherit;
   font-weight: 400;
-  font-size: 18px;
+  font-size: inherit;
   background-color: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -134,6 +138,7 @@ ol {
 
 input::-webkit-input-placeholder {
   outline: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-form__checkbox-list {
@@ -198,7 +203,7 @@ input::-webkit-input-placeholder {
 }
 
 .title {
-  margin-bottom: 23px;
+  margin-bottom: 15px;
   color: #fff;
   font-family: Oswald, sans-serif;
   font-weight: 700;
@@ -213,8 +218,8 @@ input::-webkit-input-placeholder {
 
 .content__list {
   position: relative;
-  height: 298px;
-  overflow-y: scroll;
+  height: 302px;
+  overflow-y: auto;
 }
 
 .content__list-item {
@@ -265,10 +270,13 @@ input::-webkit-input-placeholder {
 }
 
 .content__video-card-title {
+  overflow: hidden;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
@@ -278,18 +286,13 @@ input::-webkit-input-placeholder {
   line-height: 90%;
 }
 
-.content__video-card-title,
-.content__video-card-description {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .content__video-card-thumbnail {
   width: 100%;
   max-width: 194px;
   height: 100%;
   max-height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .more-button {
